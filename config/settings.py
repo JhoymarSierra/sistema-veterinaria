@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'propietarios',
     'mascotas',
     'historias_clinicas',
+    'veterinarios',
+    'citas',
+    'vacunas',
 ]
 
 MIDDLEWARE = [
