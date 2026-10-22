@@ -1,12 +1,9 @@
 from django.contrib import admin
-from aplicaciones_vacunas.models import AplicacionVacuna
-from .models import Vacuna
-
+from .models import Vacuna, AplicacionVacuna
 
 class AplicacionVacunaInline(admin.TabularInline):
     model = AplicacionVacuna
     extra = 1
-
 
 @admin.register(Vacuna)
 class VacunaAdmin(admin.ModelAdmin):
