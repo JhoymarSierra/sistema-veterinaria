@@ -7,4 +7,4 @@ class PropietarioCreateView(CreateView):
     model = Propietario
     form_class = PropietarioForm
     template_name = 'propietarios/propietario_form.html'
-    success_url = reverse_lazy('propietario_crear')
+    success_url = reverse_lazy('propietarios:crear')

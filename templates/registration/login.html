@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Iniciar Sesión - Clínica Veterinaria{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center py-4">
+    <div class="col-md-5 col-lg-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-primary text-white text-center py-3">
+                <h4 class="mb-0 fw-bold">Iniciar Sesión</h4>
+            </div>
+            <div class="card-body p-4">
+                {% if form.errors %}
+                    <div class="alert alert-danger small" role="alert">
+                        Usuario o contraseña incorrectos. Inténtalo nuevamente.
+                    </div>
+                {% endif %}
+
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold" for="id_username">Usuario:</label>
+                        <input type="text" name="username" autofocus required id="id_username" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold" for="id_password">Contraseña:</label>
+                        <input type="password" name="password" required id="id_password" class="form-control">
+                    </div>
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg fw-bold">Ingresar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
