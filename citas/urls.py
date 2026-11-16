@@ -1,10 +1,21 @@
+
 from django.urls import path
-from .views import CitaCreateView
+
+from .views import (
+    CitaListView,
+    CitaCreateView,
+    CitaUpdateView,
+    CitaDeleteView,
+)
+
+app_name = 'citas'
 
 urlpatterns = [
-    path(
-        '',
-        CitaCreateView.as_view(),
-        name='cita_crear'
-    ),
+    path('', CitaListView.as_view(), name='listar'),
+    path('crear/', CitaCreateView.as_view(), name='crear'),
+    path('editar/<int:pk>/', CitaUpdateView.as_view(), name='editar'),
+    path('eliminar/<int:pk>/', CitaDeleteView.as_view(), name='eliminar'),
 ]
+
+
+
