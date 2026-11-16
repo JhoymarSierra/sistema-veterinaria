@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Eliminar cita{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+
+        <div class="card border-0 shadow">
+            <div class="card-body p-4 text-center">
+
+                <h3 class="text-danger fw-bold">Eliminar cita</h3>
+
+                <p class="mt-3">
+                    ¿Estás seguro de que deseas eliminar esta cita?
+                </p>
+
+                <p class="text-muted">
+                    Mascota: {{ object.mascota.nombre }}<br>
+                    Veterinario: {{ object.veterinario.nombre }}<br>
+                    Fecha: {{ object.fecha|date:"d/m/Y H:i" }}
+                </p>
+
+                <form method="post">
+                    {% csrf_token %}
+
+                    <button type="submit" class="btn btn-danger">
+                        Sí, eliminar
+                    </button>
+
+                    <a href="{% url 'citas:listar' %}"
+                       class="btn btn-secondary">
+                        Cancelar
+                    </a>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
