@@ -143,7 +143,7 @@ python manage.py runserver
 
 | Usuario | Contraseña | Rol |
 |---|---|---|
-| `admin` | `[contraseña]` | Superusuario (acceso a `/admin/`) |
+| `admin` | `jhoimar25647` | Superusuario (acceso a `/admin/`) |
 
 > La carpeta `venv/` y los archivos `__pycache__/` están excluidos del repositorio mediante `.gitignore`.
 
